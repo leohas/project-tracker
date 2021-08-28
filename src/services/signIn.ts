@@ -6,7 +6,7 @@ import { signInWithPopup, GithubAuthProvider } from 'firebase/auth'
 // Creating a Github Provider
 const githubProvider = new GithubAuthProvider()
 
-// Function that signs in the user using Github provider
+// Function that signs in the user using Github Provider
 const signInUser = () => {
   return signInWithPopup(auth, githubProvider).then((res) => {
     return res
