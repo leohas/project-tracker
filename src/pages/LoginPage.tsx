@@ -1,9 +1,12 @@
+/* This is the Login Page. In here you can log as either Admin or Normal User. */
+
 import React, { useEffect } from 'react';
-import signInUser from '../services/signIn';
-import GlobalStyles from '../styles/GlobalStyles';
+import signInUser from '../services/signIn'; // Importing signIn function
+import GlobalStyles from '../styles/GlobalStyles'; // Importing GlobalStyles
 
 function LoginPage() {
-  const githubLogin = async () => {
+  // Function to handle when Login button is clicked
+  const Login = async () => {
     const res = await signInUser()
     console.log(res)
   }
@@ -11,8 +14,7 @@ function LoginPage() {
     <>
       <GlobalStyles />
       <div className="App">
-        <button onClick={githubLogin}>GithubLogin</button>
-        <h1 style={{ textAlign: 'center', marginTop: '100px' }}>Project is running... Code something great :D</h1>
+        <button onClick={Login}>Login with Github</button>  {/* Login Button */}
       </div>
     </>
   );

@@ -1,9 +1,13 @@
-import React from 'react'
-import signOutUser from '../services/signOut'
-import GlobalStyles from '../styles/GlobalStyles'
+/* This is the User page. In here, the user can add Projects and check their
+status */
+
+import React, { useEffect } from 'react'
+import signOutUser from '../services/signOut' // Importing signOut function
+import GlobalStyles from '../styles/GlobalStyles'  // Importing GlobalStyles
 
 function UserPage() {
-  const githubLogOut = () => {
+  // Function to handle when user clicks on LogOut Button
+  const LogOut = () => {
     const res = signOutUser()
     console.log(res)
   }
@@ -11,7 +15,7 @@ function UserPage() {
   return (
     <>
       <GlobalStyles />
-      <button onClick={githubLogOut}>GithubLogout</button>
+      <button onClick={LogOut}>Log Out</button> {/* Log Out Button */}
     </>
   )
 }
