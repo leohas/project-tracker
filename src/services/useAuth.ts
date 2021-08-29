@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { setGlobal } from 'reactn'
-import LoginPage from '../pages/LoginPage'
 import { FbAuth, FbDb } from '../services/firebaseConfig'
 
 export const useAuth = () => {
