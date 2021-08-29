@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import { getGlobal, setGlobal } from 'reactn'
+import { setGlobal } from 'reactn'
+import LoginPage from '../pages/LoginPage'
 import { FbAuth, FbDb } from '../services/firebaseConfig'
 
 export const useAuth = () => {
@@ -14,6 +15,7 @@ export const useAuth = () => {
 
         if (!userAlreadyExists) {
           await FbDb.child('users').child(userUid).set({
+            email: user?.email,
             admin: false
           })
           const userIsAdmin = (await FbDb.child('users').child(userUid).child('admin')
@@ -24,7 +26,6 @@ export const useAuth = () => {
             .once('value')).val()
           setGlobal({ user: { ...user, admin: userIsAdmin } })
         }
-        console.log(getGlobal())
         return setAuthState({ isSignedIn: !!user })
       }
 

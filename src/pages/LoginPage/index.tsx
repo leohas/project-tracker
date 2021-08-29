@@ -1,11 +1,17 @@
-import React from 'react';
-// Importing signIn function
-import GlobalStyles from '../../styles/GlobalStyles'; // Importing GlobalStyles
+import React, { useState } from 'react';
+import GlobalStyles from '../../styles/GlobalStyles';
 import { Container, HeaderDiv, ContentDiv } from './styles';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import firebase, { FbAuth } from '../../services/firebaseConfig'
 
 const LoginPage: React.FC = () => {
+  const [adminState, setAdminState] = useState(false)
+  const [switchState, setSwitchState] = useState(false)
+
+  const handleSwitch = () => {
+
+  }
+
   const uiConfig = {
     signInFlow: 'popup',
     signInSuccessUrl: '/',
@@ -13,12 +19,10 @@ const LoginPage: React.FC = () => {
       firebase.auth.GithubAuthProvider.PROVIDER_ID
     ],
   };
-  // Function to handle when Login button is clicked
   return (
     <>
       <GlobalStyles />
       <Container>
-        {/* Login Button */}
         <HeaderDiv>
           <h1>Project Tracker</h1>
         </HeaderDiv>

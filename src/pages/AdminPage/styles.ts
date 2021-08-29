@@ -4,9 +4,22 @@ import paper from '@material-ui/core/Paper'
 
 export const Container = styled(container)``
 
-export const Paper = styled(paper)`
+export const PaperHeader = styled(paper)`
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: space-around;
+`
+
+export const AvatarPhoto = styled.img`
+  margin-left: 30px;
+  height: 20%;
+  width: 20%;
+  border-radius: 50%;
+`
+
+export const PaperContent = styled(paper)`
+display: flex;
+align-items: center;
+justify-content: space-around;
+flex-direction: column;
 `
