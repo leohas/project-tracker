@@ -12,12 +12,13 @@ import {
 import Button from '@material-ui/core/Button'
 import { getGlobal } from 'reactn'
 import { Modal, TextField } from '@material-ui/core'
+import ProjectDetail from '../../components/ProjectDetail'
 
 const UserPage: React.FC = () => {
   const { user }: any = getGlobal()
+  const message = 'It seems you don\'t have any projects. Click the Add button to add a new one.'
 
-  const [projectsState, setProjectsState] = useState([])
-  const [message, setMessage] = useState('It seems you don\'t have any projects. Click the Add button to add a new one.')
+  const [projectsState, setProjectsState]: any[] = useState([])
   const [projectName, setProjectName] = useState('')
   const [projectDescription, setProjectDescription] = useState('')
   const [projectStatus, setProjectStatus] = useState('')
@@ -25,23 +26,26 @@ const UserPage: React.FC = () => {
 
   useEffect(() => {
     const getUserProjects = async () => {
-      const userUid = user.uid
-      const projects = (await FbDb.child('users').child(userUid).child('projects')
-        .once('value')).val() || {}
+      const userUid = user.uid || null
 
-      /*
-      if (projects) {
-        const projectsUser: any = []
-        projects.forEach((project: any) => {
-          projectsUser.push(project)
-        })
-        console.log(projectsState)
-        setProjectsState(projectsUser)
+      if (userUid) {
+        const projects = (await FbDb.child('users').child(userUid).child('projects')
+          .once('value')).val() || {}
+
+        if (projects) {
+          const projectsUser = Object.entries(projects).map(project => {
+            const id = project[0]
+            const value: any = project[1]
+
+            return { id, ...value }
+          })
+
+          if (projectsUser) return setProjectsState(projectsUser)
+        }
       }
-      */
     }
     getUserProjects()
-  }, [])
+  }, [projectsState])
 
   const signOutHandler = async () => {
     await FbAuth.signOut()
@@ -99,8 +103,17 @@ const UserPage: React.FC = () => {
           Add
         </Button>
       </PaperHeader>
-      <PaperContent>
-        <h2>{message}</h2>
+      <PaperContent onClick={() => console.log(projectsState)}>
+        {projectsState.length > 0 ? projectsState?.map((project: any, indexProject: any) => (
+          <ProjectDetail
+            key={project.id}
+            index={indexProject}
+            name={project.name}
+            description={project.description}
+            status={project.status}
+          >
+          </ProjectDetail>
+        )) : <h2>{message}</h2>}
         <Modal
           open={modalState}
           onClose={handleCloseModal}

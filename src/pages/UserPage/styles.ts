@@ -36,4 +36,6 @@ display: flex;
 align-items: center;
 justify-content: space-around;
 flex-direction: column;
+padding-right: 30px;
+padding-left: 30px;
 `
