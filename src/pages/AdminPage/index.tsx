@@ -39,7 +39,7 @@ const AdminPage: React.FC = () => {
     <PaperContainer>
       <GlobalStyles />
       <PaperHeader>
-        <AvatarPhoto src='https://pngimg.com/uploads/anonymous_mask/anonymous_mask_PNG2.png' />
+        <AvatarPhoto src={`${user.photoURL || 'https://pngimg.com/uploads/anonymous_mask/anonymous_mask_PNG2.png'}`} />
         <h1> Hello {`${user.email}`}! </h1>
       </PaperHeader>
       <PaperContent>
@@ -63,7 +63,7 @@ const AdminPage: React.FC = () => {
           Log Out
         </LogOutButton>
       </PaperContent>
-    </PaperContainer>
+    </PaperContainer >
   )
 }
 

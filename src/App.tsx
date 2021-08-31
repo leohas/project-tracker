@@ -1,9 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
-import AdminPage from './pages/AdminPage';
 import LoginPage from './pages/LoginPage';
 import Panel from './pages/Panel';
-import UserPage from './pages/UserPage';
 import { useAuth } from './services/useAuth';
 import GlobalStyles from './styles/GlobalStyles';
 
