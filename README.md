@@ -25,7 +25,7 @@ Before you adventure on tracking your projects, make sure you have what it takes
 * A code editor, like VSCode
 * Patience and dedication :)
 
-## How To
+# How To
 <!--ts-->
   * [Clone this Repository](#clone-this-repository)
   * [Install the dependencies](#install-the-dependencies)
@@ -33,16 +33,16 @@ Before you adventure on tracking your projects, make sure you have what it takes
   * [Deploy to Firebase](#deploy-to-firebase)
 <!--te-->
 
-# Clone this Repository
+## Clone this Repository
 First of all, you need to have this project on your local machine. You can clone this repository by open a terminal, navigate to whatever folder you want this project to be and type ```git clone "https://github.com/leohas/project-tracker.git" ```! Done! :)
 
-# Install the dependencies
+## Install the dependencies
 Once you have cloned this repository, you can open it in whatever code editor you want. However, you need to install all the dependencies of this project, which are written down in ```package.json``` file. To do so, you need to open a terminal and navigate to the root folder of this project. If you're using VSCode, you can use the built-in terminal as well. Type in ```npm install``` or ```yarn install``` depending on which one you're using. After some short moment, it should be all set!
 
-# Run this project
+## Run this project
 This project has a script defined by ReactJS, - which you can view on ```package.json``` file - ```yarn(or npm) start```. This script can be run by navigating to any folder of this project and typing in this command on a terminal (Native on your OS or built-in on your code editor). By running this script you'll be initiating the server and starting the project on your localhost (default port: 3000).
 
-# Deploy to Firebase
+## Deploy to Firebase
 Once you made all the changes you want, you can deploy it to Firebase. To do so, you must first create a build by running another script defined by ReactJS, which is ```yarn(or npm) build```. Running this script will tell ReactJS to compile your code so that the Browser can understand. This will create a folder named "build" in the structure of this project. Next, you simply just need to type "firebase deploy" and the magic will happen!
 
 # Conclusion
