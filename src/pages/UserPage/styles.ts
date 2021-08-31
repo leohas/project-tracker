@@ -8,6 +8,7 @@ export const PaperHeader = styled(paper)`
   display: flex;
   align-items: center;
   justify-content: space-between;
+      box-shadow: 0px 0px 0px 0px !important;
 `
 
 export const ModalDiv = styled.div`
@@ -38,4 +39,5 @@ justify-content: space-around;
 flex-direction: column;
 padding-right: 30px;
 padding-left: 30px;
+box-shadow: 0px 0px 0px 0px !important;
 `

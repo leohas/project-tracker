@@ -8,6 +8,7 @@ export const PaperHeader = styled(paper)`
   display: flex;
   align-items: center;
   justify-content: space-around;
+  box-shadow: 0px 0px 0px 0px !important;
 `
 
 export const AvatarPhoto = styled.img`
@@ -22,4 +23,5 @@ display: flex;
 align-items: center;
 justify-content: space-around;
 flex-direction: column;
+box-shadow: 0px 0px 0px 0px !important;
 `

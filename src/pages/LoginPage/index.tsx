@@ -16,7 +16,8 @@ const LoginPage: React.FC = () => {
     signInFlow: 'popup',
     signInSuccessUrl: '/',
     signInOptions: [
-      firebase.auth.GithubAuthProvider.PROVIDER_ID
+      firebase.auth.GithubAuthProvider.PROVIDER_ID,
+      firebase.auth.EmailAuthProvider.PROVIDER_ID
     ],
   };
   return (

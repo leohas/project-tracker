@@ -7,7 +7,7 @@ import {
   ModalDiv,
   ModalTitle,
   PaperContent,
-  PaperHeader,
+  PaperHeader
 } from './styles'
 import Button from '@material-ui/core/Button'
 import { getGlobal } from 'reactn'
@@ -16,7 +16,6 @@ import ProjectDetail from '../../components/ProjectDetail'
 
 const UserPage: React.FC = () => {
   const { user }: any = getGlobal()
-  const message = 'It seems you don\'t have any projects. Click the Add button to add a new one.'
 
   const [projectsState, setProjectsState]: any[] = useState([])
   const [projectName, setProjectName] = useState('')
@@ -93,7 +92,7 @@ const UserPage: React.FC = () => {
     <Container>
       <GlobalStyles />
       <PaperHeader>
-        <AvatarPhoto src={`${user.photoURL}`} />
+        <AvatarPhoto src={`${user.photoURL || 'https://img1.gratispng.com/20171220/qve/anonymous-mask-png-5a3a4666911942.7179111615137685505943.jpg'}`} />
         <h1> Hello {`${user.email}`}! </h1>
         <Button variant="contained"
           color="primary"
@@ -113,7 +112,7 @@ const UserPage: React.FC = () => {
             status={project.status}
           >
           </ProjectDetail>
-        )) : <h2>{message}</h2>}
+        )) : <h2>It seems you don't have any projects. Click the Add button to add a new one.</h2>}
         <Modal
           open={modalState}
           onClose={handleCloseModal}
@@ -164,7 +163,7 @@ const UserPage: React.FC = () => {
           Log Out
         </Button>
       </div>
-    </Container>
+    </Container >
   )
 }
 
