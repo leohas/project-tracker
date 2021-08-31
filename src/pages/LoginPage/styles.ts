@@ -1,38 +1,38 @@
 import styled from 'styled-components'
+import paper from '@material-ui/core/Paper'
 
-export const Container = styled.div`
-  height: 100%;
-  width: 100%;
+export const PaperLogin = styled(paper)`
+  height: 100vh;
   display: flex;
   align-items: center;
-  margin: auto;
   flex-direction: column;
-  background: #363732;
+  background: #363732 !important;
 `
 
-export const HeaderDiv = styled.div`
-  height: 35%;
-  width: 100%;
+export const PaperHeader = styled(paper)`
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: space-around;
+  box-shadow: 0px 0px 0px 0px !important;
+  background: #363732 !important;
+
   > h1 {
+    margin-top: 50px;
     font-family: 'Roboto', sans-serif;
     font-size: 40px;
     color: #FFF;
   }
 `
 
-export const ContentDiv = styled.div`
-  height: 20%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+export const PaperContent = styled(paper)`
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+box-shadow: 0px 0px 0px 0px !important;
+background: #363732 !important;
 
-  > p {
+> p {
     font-size: 27px;
     text-align: center;
     text-justify: inter-word;
