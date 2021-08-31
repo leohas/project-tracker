@@ -20,9 +20,6 @@ const UserPage: React.FC = () => {
 
   const [projectsState, setProjectsState]: any[] = useState([])
   const [projectName, setProjectName] = useState('')
-  const [statusMessage, setStatusMessage] = useState('')
-  const [nameMessage, setNameMessage] = useState('')
-  const [descriptionMessage, setDescriptionMessage] = useState('')
   const [projectDescription, setProjectDescription] = useState('')
   const [projectStatus, setProjectStatus] = useState('')
   const [modalState, setModalState] = useState(false)
@@ -134,14 +131,12 @@ const UserPage: React.FC = () => {
         >
           <ModalDiv>
             <ModalTitle>Add Project</ModalTitle>
-            <h2>{nameMessage}</h2>
             <TextField
               id="outlined-basic"
               label="Type in your project name"
               variant="outlined"
               onChange={handleProjectName}
             />
-            <h2>{descriptionMessage}</h2>
             <TextField
               id="outlined-basic"
               label="Type in your project description"
@@ -149,7 +144,6 @@ const UserPage: React.FC = () => {
               variant="outlined"
               onChange={handleProjectDescription}
             />
-            <h2>{statusMessage}</h2>
             <TextField
               id="outlined-basic"
               label="Type in your project status (active or inactive)"

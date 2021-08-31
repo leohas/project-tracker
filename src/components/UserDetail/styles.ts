@@ -27,12 +27,15 @@ export const PaperEmail = styled.h1`
 export const PaperProjects = styled(paper)`
     box-shadow: 0px 0px 0px 0px !important;
     background: none !important;
+    > h1, h2{
+        font-family: Roboto, sans-serif;
+    }
 `
 
 export const PaperName = styled.h1`
     align-self: center;
     font-family: Roboto, sans-serif;
-`
+    `
 
 export const PaperDescription = styled.h2`
     font-family: Roboto, sans-serif;
