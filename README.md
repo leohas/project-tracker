@@ -29,7 +29,7 @@ Before you adventure on tracking your projects, make sure you have what it takes
 <!--ts-->
   * [Clone this Repository](#clone-this-repository)
   * [Install the dependencies](#install-the-dependencies)
-  * [Run this project](#start-this-project)
+  * [Run this project](#run-this-project)
   * [Deploy to Firebase](#deploy-to-firebase)
 <!--te-->
 
