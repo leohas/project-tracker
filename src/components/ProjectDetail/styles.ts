@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import paper from '@material-ui/core/Paper'
 
 export const PaperProject = styled(paper) <any>`
-    background: ${({ index }: any) => Boolean(index % 2) ? '#a08a8a21' : '#FFF'} !important;
+    background: ${({ index }: any) => Boolean(index % 2) ? '#a08a8a21' : '#EFE9E7'} !important;
     display: flex;
     flex-direction: column;
     margin: 30px 300px;
@@ -23,5 +23,5 @@ export const PaperDescription = styled.h2`
 export const PaperStatus = styled.h2<any>`
     font-family: Roboto, sans-serif;
     font-weight: 400;
-    color: ${({ status }: any) => status === 'active' ? '#00a000' : '#e50000'};
+    color: ${({ status }: any) => status === 'Active' ? '#6CAE75' : '#E84855'};
 `

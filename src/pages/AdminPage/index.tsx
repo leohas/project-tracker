@@ -1,10 +1,9 @@
-import { Button } from '@material-ui/core';
 import React, { useEffect, useState } from 'react'
 import { getGlobal } from 'reactn';
 import UserDetail from '../../components/UserDetail';
 import { FbAuth, FbDb } from '../../services/firebaseConfig';
 import GlobalStyles from "../../styles/GlobalStyles";
-import { AvatarPhoto, Container, PaperContent, PaperHeader } from './styles';
+import { AvatarPhoto, PaperContainer, LogOutButton, PaperContent, PaperHeader } from './styles';
 
 const AdminPage: React.FC = () => {
   const { user }: any = getGlobal()
@@ -37,7 +36,7 @@ const AdminPage: React.FC = () => {
   }, [])
 
   return (
-    <Container>
+    <PaperContainer>
       <GlobalStyles />
       <PaperHeader>
         <AvatarPhoto src={`${user.photoURL}`} />
@@ -49,23 +48,22 @@ const AdminPage: React.FC = () => {
             key={user.id}
             index={indexUser}
             email={user.email}
-            projects={Object.values(user.projects)}
+            projects={user.projects ? Object.values(user.projects) : []}
           >
           </UserDetail>
-        )) : <h2>These are all the projects from all the users: </h2>}
-
-      </PaperContent>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <Button
+        )) : <h2 style={{ marginTop: '40px' }}>
+          These are all the projects from all the users:
+        </h2>}
+        <LogOutButton
           variant="contained"
           color="secondary"
           style={{ marginTop: '30px' }}
           onClick={signOutHandler}
         >
           Log Out
-        </Button>
-      </div>
-    </Container>
+        </LogOutButton>
+      </PaperContent>
+    </PaperContainer>
   )
 }
 

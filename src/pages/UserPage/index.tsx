@@ -3,7 +3,8 @@ import GlobalStyles from '../../styles/GlobalStyles'
 import { FbAuth, FbDb } from '../../services/firebaseConfig'
 import {
   AvatarPhoto,
-  Container,
+  PaperContainer,
+  LogOutButton,
   ModalDiv,
   ModalTitle,
   PaperContent,
@@ -19,6 +20,9 @@ const UserPage: React.FC = () => {
 
   const [projectsState, setProjectsState]: any[] = useState([])
   const [projectName, setProjectName] = useState('')
+  const [statusMessage, setStatusMessage] = useState('')
+  const [nameMessage, setNameMessage] = useState('')
+  const [descriptionMessage, setDescriptionMessage] = useState('')
   const [projectDescription, setProjectDescription] = useState('')
   const [projectStatus, setProjectStatus] = useState('')
   const [modalState, setModalState] = useState(false)
@@ -72,7 +76,14 @@ const UserPage: React.FC = () => {
   }
 
   const handleProjectStatus = (event: any) => {
-    setProjectStatus(event.target.value)
+    const statusCharacters: string[] = event.target.value.split('')
+
+    if (statusCharacters) {
+      const firstLetter = statusCharacters[0].toUpperCase()
+      const word = statusCharacters.slice(1, 7).join('')
+      const status = firstLetter + word
+      setProjectStatus(status)
+    }
   }
 
   const handleAddButton = async () => {
@@ -89,7 +100,7 @@ const UserPage: React.FC = () => {
   }
 
   return (
-    <Container>
+    <PaperContainer>
       <GlobalStyles />
       <PaperHeader>
         <AvatarPhoto src={`${user.photoURL || 'https://img1.gratispng.com/20171220/qve/anonymous-mask-png-5a3a4666911942.7179111615137685505943.jpg'}`} />
@@ -102,7 +113,7 @@ const UserPage: React.FC = () => {
           Add
         </Button>
       </PaperHeader>
-      <PaperContent onClick={() => console.log(projectsState)}>
+      <PaperContent>
         {projectsState.length > 0 ? projectsState?.map((project: any, indexProject: any) => (
           <ProjectDetail
             key={project.id}
@@ -112,7 +123,9 @@ const UserPage: React.FC = () => {
             status={project.status}
           >
           </ProjectDetail>
-        )) : <h2>It seems you don't have any projects. Click the Add button to add a new one.</h2>}
+        )) : <h2 style={{ marginTop: '40px' }}>
+          It seems you don't have any projects. Click the Add button to add a new one.
+        </h2>}
         <Modal
           open={modalState}
           onClose={handleCloseModal}
@@ -121,12 +134,14 @@ const UserPage: React.FC = () => {
         >
           <ModalDiv>
             <ModalTitle>Add Project</ModalTitle>
+            <h2>{nameMessage}</h2>
             <TextField
               id="outlined-basic"
               label="Type in your project name"
               variant="outlined"
               onChange={handleProjectName}
             />
+            <h2>{descriptionMessage}</h2>
             <TextField
               id="outlined-basic"
               label="Type in your project description"
@@ -134,6 +149,7 @@ const UserPage: React.FC = () => {
               variant="outlined"
               onChange={handleProjectDescription}
             />
+            <h2>{statusMessage}</h2>
             <TextField
               id="outlined-basic"
               label="Type in your project status (active or inactive)"
@@ -152,18 +168,15 @@ const UserPage: React.FC = () => {
             </Button>
           </ModalDiv>
         </Modal>
-      </PaperContent>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <Button
+        <LogOutButton
           variant="contained"
           color="secondary"
-          style={{ marginTop: '30px' }}
           onClick={signOutHandler}
         >
           Log Out
-        </Button>
-      </div>
-    </Container >
+        </LogOutButton>
+      </PaperContent>
+    </PaperContainer >
   )
 }
 
