@@ -18,6 +18,8 @@
     "@types/styled-components": "^5.1.13",
     "add": "^2.0.6",
     "firebase": "8.9.1",
+    "firebase-tools": "^9.16.6",
+    "global": "^4.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-firebaseui": "^5.0.2",

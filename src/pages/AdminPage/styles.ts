@@ -14,7 +14,7 @@ export const PaperHeader = styled(paper)`
   justify-content: space-around;
   box-shadow: 0px 0px 0px 0px !important;
   > h1 {
-    font-family: 'Roboto', sans-serif;
+    font-family: Roboto, sans-serif;
     color: #FFF;
   }
 `
@@ -35,7 +35,7 @@ export const PaperContent = styled(paper)`
   background: #363732 !important;
   
   > h2 {
-    font-family: 'Roboto', sans-serif;
+    font-family: Roboto, sans-serif;
     color: #FFF;
   }
 `
