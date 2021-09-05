@@ -34,7 +34,7 @@ Before you adventure on tracking your projects, make sure you have what it takes
 <!--te-->
 
 ## Clone this Repository
-First of all, you need to have this project on your local machine. You can clone this repository by open a terminal, navigate to whatever folder you want this project to be and type ```git clone "https://github.com/leohas/project-tracker.git" ```! Done! :)
+First of all, you need to have this project on your local machine. You can clone this repository by opening a terminal, navigating to whatever folder you want this project to be and typing ```git clone "https://github.com/leohas/project-tracker.git" ```! Done! :)
 
 ## Install the dependencies
 Once you have cloned this repository, you can open it in whatever code editor you want. However, you need to install all the dependencies of this project, which are written down in ```package.json``` file. To do so, you need to open a terminal and navigate to the root folder of this project. If you're using VSCode, you can use the built-in terminal as well. Type in ```npm install``` or ```yarn install``` depending on which one you're using. After some short moment, it should be all set!
