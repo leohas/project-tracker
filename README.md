@@ -43,7 +43,7 @@ Once you have cloned this repository, you can open it in whatever code editor yo
 This project has a script defined by ReactJS, - which you can view on ```package.json``` file - ```yarn(or npm) start```. This script can be run by navigating to any folder of this project and typing in this command on a terminal (Native on your OS or built-in on your code editor). By running this script you'll be initiating the server and starting the project on your localhost (default port: 3000).
 
 ## Deploy to Firebase
-Once you've made all the changes you want, you can deploy it to Firebase. To do so, you must first create a build by running another script defined by ReactJS, which is ```yarn(or npm) build```. Running this script will tell ReactJS to compile your code so that the Browser can understand. This will create a folder named "build" in the structure of this project. Next, you simply just need to type "firebase deploy" and the magic will happen!
+Once you've made all the changes you want, you can deploy it to Firebase. To do so, you must first create a build by running another script defined by ReactJS, which is ```yarn(or npm) build```. Running this script will tell ReactJS to compile your code so that the Browser can understand. This will create a folder named "build" in the structure of this project. Next, you simply just need to type ```firebase deploy``` and the magic will happen!
 
 # Conclusion
 
